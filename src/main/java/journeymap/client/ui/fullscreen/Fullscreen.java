@@ -657,7 +657,7 @@ public class Fullscreen extends JmUI
             return;
         }
 
-        int blockSize = (int) Math.pow(2, fullMapProperties.zoomLevel.get());
+        double blockSize = Math.pow(2, fullMapProperties.zoomLevel.get());
 
         if (Mouse.isButtonDown(0) && !isScrolling)
         {
@@ -670,8 +670,8 @@ public class Fullscreen extends JmUI
             if (!Mouse.isButtonDown(0) && isScrolling)
             {
                 isScrolling = false;
-                int mouseDragX = (mx - msx) * Math.max(1, scaleFactor) / blockSize;
-                int mouseDragY = (my - msy) * Math.max(1, scaleFactor) / blockSize;
+                int mouseDragX = (int)((mx - msx) * Math.max(1, scaleFactor) / blockSize);
+                int mouseDragY = (int)((my - msy) * Math.max(1, scaleFactor) / blockSize);
                 msx = mx;
                 msy = my;
 
@@ -883,13 +883,13 @@ public class Fullscreen extends JmUI
 
             if (isScrolling)
             {
-                int blockSize = (int) Math.pow(2, fullMapProperties.zoomLevel.get());
+                double blockSize = Math.pow(2, fullMapProperties.zoomLevel.get());
 
-                int mouseDragX = (mx - msx) * Math.max(1, scaleFactor) / blockSize;
-                int mouseDragY = (my - msy) * Math.max(1, scaleFactor) / blockSize;
+                int mouseDragX = (int) ((mx - msx) * Math.max(1, scaleFactor) / blockSize);
+                int mouseDragY = (int) ((my - msy) * Math.max(1, scaleFactor) / blockSize);
 
-                xOffset = (mouseDragX * blockSize);
-                yOffset = (mouseDragY * blockSize);
+                xOffset = (int)(mouseDragX * blockSize);
+                yOffset = (int)(mouseDragY * blockSize);
 
             }
             else

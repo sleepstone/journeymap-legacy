@@ -54,7 +54,7 @@ public class Tile
         this.zoom = zoom;
         this.theCacheKey = toCacheKey(tileX, tileZ, zoom);
         this.theHashCode = theCacheKey.hashCode();
-        final int distance = 32 / (int) Math.pow(2, zoom);
+        final int distance = (int)(32 / Math.pow(2, zoom));
         ulChunk = new ChunkCoordIntPair(tileX * distance, tileZ * distance);
         lrChunk = new ChunkCoordIntPair(ulChunk.chunkXPos + distance - 1, ulChunk.chunkZPos + distance - 1);
         ulBlock = new Point(ulChunk.chunkXPos * 16, ulChunk.chunkZPos * 16);

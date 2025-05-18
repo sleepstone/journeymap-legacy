@@ -357,8 +357,8 @@ public class TileDrawStep
 
     public BufferedImage getScaledRegionArea()
     {
-        int scale = (int) Math.pow(2, zoom);
-        int scaledSize = Tile.TILESIZE / scale;
+        double scale = Math.pow(2, zoom);
+        int scaledSize = (int)(Tile.TILESIZE / Math.max(scale, 1));
 
         try
         {

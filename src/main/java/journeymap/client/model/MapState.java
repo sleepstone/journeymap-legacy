@@ -34,7 +34,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class MapState
 {
-    public final int minZoom = 0;
+    public final int minZoom = -1;
     public final int maxZoom = 5;
 
     // These can be safely changed at will
